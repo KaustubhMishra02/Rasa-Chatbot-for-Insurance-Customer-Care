@@ -1,0 +1,51 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - supply_info
+  - check_claim_status
+slots:
+  name:
+    type: text
+  claim_id:
+    type: text
+
+entities: 
+  - name   
+  - claim_id
+    
+responses:
+  utter_greet:
+  - text: "Hey there, I'm Insura, the virtual assistant for AEG Insurance Limited! How can I help you today?"
+
+  utter_checking_status:
+  - text: "Thank you for the information! Please wait a moment while I check your claim status."
+  
+  utter_supply_info:
+  - text: "Sure, I can help you with that. Can you please supply your name and claim ID?"
+  
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "We hope we were able to help you. Goodbye!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_csv
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

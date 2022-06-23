@@ -1,0 +1,35 @@
+version: "2.0"
+
+stories:
+
+- story: path 1 #know about claim policies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: path 2 #check claim status
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: check_claim_status
+  - action: utter_supply_info
+  - intent: supply_info
+    entities:
+    - name
+    - claim_id
+  - action: utter_checking_status
+  - action: action_csv
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: path 3 #file a new claim
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
