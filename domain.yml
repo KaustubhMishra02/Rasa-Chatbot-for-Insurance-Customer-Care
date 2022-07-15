@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 intents:
   - greet
@@ -10,28 +10,66 @@ intents:
   - bot_challenge
   - supply_info
   - check_claim_status
+  - inquire
+  - life
+  - health
+  - auto
+  - file_a_claim
+  - provide_uname
+
 slots:
-  name:
+  person:
     type: text
+    mappings:
+    - type: from_entity
+      entity: PERSON
   claim_id:
     type: text
+    mappings:
+    - type: from_entity
+      entity: claim_id
+  uname:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: PERSON
 
 entities: 
-  - name   
+  - PERSON   
   - claim_id
+  - uname
     
 responses:
   utter_greet:
   - text: "Hey there, I'm Insura, the virtual assistant for AEG Insurance Limited! How can I help you today?"
 
-  utter_checking_status:
-  - text: "Thank you for the information! Please wait a moment while I check your claim status."
-  
   utter_supply_info:
   - text: "Sure, I can help you with that. Can you please supply your name and claim ID?"
+
+  utter_provide_uname:
+  - text: "Okay. Can you please provide me with your registered Username?"
+
+  utter_provide_documents:
+  - text: "Thanks for trusting us! I request you to forward your documents to +919211420786 so that our employees can verify them."
   
   utter_did_that_help:
   - text: "Did that help you?"
+
+  utter_inquiry:
+  - text: "We offer 3 types of insurance policies, namely life, health and auto insurance, what type are you interested in?"
+
+  utter_health:
+  - text: "We offer both individual and family health insurance. 
+           Our individual plan has a cover period ranging from 1-25 years with a base premium of INR 5000 pm or 50000 if you plan to pay annually, for a coverage of upto 10 lacs. 
+           Our family plan covers a minimum of 2 people and has a base premium of INR 7500 pm or 80000 if you plan to pay annually, for a coverage of upto 15 lacs. "
+
+  utter_auto:
+  - text : "We offer auto insurance for 2,3 and 4-wheelers upto SUV's. 
+            Our base premium is INR 2000 pm and provides a cover of upto 10 lacs for a minimum period of 2 years."
+
+  utter_life:
+  - text: "We offer term life insurance for a range of 5-50 years with a base premium of INR 10000 pm or 100000 if you plan to pay annually.
+          It will amount to a payout of 1.5 cr at the moment of your untimely demise, as stipulated in our contract."
 
   utter_happy:
   - text: "Great, carry on!"
@@ -44,6 +82,7 @@ responses:
 
 actions:
   - action_csv
+  - action_write_csv
 
 
 session_config:

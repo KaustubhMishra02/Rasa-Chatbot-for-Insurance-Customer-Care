@@ -1,15 +1,48 @@
-version: "2.0"
+version: "3.1"
 
 stories:
 
-- story: path 1 #know about claim policies
+- story: path 1 #know about life policies
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: inquire
+  - action: utter_inquiry
+  - intent: life
+  - action: utter_life
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
+  - action: action_restart
+  
 
-- story: path 2 #check claim status
+- story: path 2 #know about health policies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire
+  - action: utter_inquiry
+  - intent: health
+  - action: utter_health
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye  
+  - action: action_restart
+
+- story: path 3 #know about auto policies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire
+  - action: utter_inquiry
+  - intent: auto
+  - action: utter_auto
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: path 4 #check claim status
   steps:
   - intent: greet
   - action: utter_greet
@@ -17,19 +50,26 @@ stories:
   - action: utter_supply_info
   - intent: supply_info
     entities:
-    - name
+    - PERSON
     - claim_id
-  - action: utter_checking_status
   - action: action_csv
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_goodbye
+  - action: action_restart
 
-- story: path 3 #file a new claim
+- story: path 5 #file a new claim
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+      - intent: greet
+      - action: utter_greet
+      - intent: file_a_claim
+      - action: utter_provide_uname
+      - intent: provide_uname
+        entities:
+          - PERSON
+      - action: action_write_csv
+      - action: utter_provide_documents
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_goodbye
+      - action: action_restart

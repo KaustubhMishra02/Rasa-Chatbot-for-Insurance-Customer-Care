@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-claim_id",
+      "2": "I-claim_id",
+      "3": "L-claim_id",
+      "4": "U-claim_id",
+      "5": "B-person",
+      "6": "I-person",
+      "7": "L-person",
+      "8": "U-person",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-claim_id": 1,
+      "I-claim_id": 2,
+      "L-claim_id": 3,
+      "U-claim_id": 4,
+      "B-person": 5,
+      "I-person": 6,
+      "L-person": 7,
+      "U-person": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

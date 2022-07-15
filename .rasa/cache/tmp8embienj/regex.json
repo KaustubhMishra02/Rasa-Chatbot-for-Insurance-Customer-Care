@@ -1,0 +1,6 @@
+[
+  {
+    "name": "claim_id",
+    "pattern": "\\d{6}"
+  }
+]

@@ -1,0 +1,12 @@
+﻿Name,Claim ID,Claim Status,Amount 
+David Johnson,123456,Approved,250000
+Robert Jansen,234567,Pending,NA
+Conan Peterson,345678,Pending,NA
+William Parker,456789,Approved,175000
+Elizabeth Brown,567891,Rejected,0
+Richard Jones,678910,Pending,NA
+Joseph Davis,789101,Pending,NA
+Thomas Moore,891011,Approved,400000
+Paul Harris,910111,Pending,NA
+Matthew Jackson,101112,Approved,350000
+John Miller,347589,Pending,0

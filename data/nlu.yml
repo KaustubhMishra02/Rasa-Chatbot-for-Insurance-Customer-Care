@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 nlu:
 - intent: greet
@@ -18,27 +18,97 @@ nlu:
     
 - intent: supply_info
   examples: |
-    - My name is [John](name). claim id is [ABCDEFGH](claim_id).
-    - name: [David](name) id:[ABCDEFGH](claim_id).
-    - Yeah sure. I'm [Barbara](name). My id is [ABCDEFGH](claim_id).
-    - [Susan](name), [ABCDEFGH](claim_id).
-    - Sure. It's [Fred](name). My id is [ABCDEFGH](claim_id).    
+    - My name is [Sam Smith](PERSON). claim id is [158795](claim_id).
+    - name: [Daniel Morgan](PERSON)  id: [754896](claim_id).
+    - Yeah sure. I'm [Kate Beckinsale](PERSON). My id is [784521](claim_id).
+    - [Robert Ludlum](PERSON), [695741](claim_id).
+    - Sure. It's [Roger Davis](PERSON). My id is [675849](claim_id).    
+    - Name is [Liam Johnson](PERSON). What is the status of claim [376194](claim_id).
+    - My name's [Mary Williams](PERSON). Has claim [946725](claim_id) been processed?
+    - Name: [John Green](PERSON) ,check the status of claim [748859](claim_id).
+    - My name is [Jacob Brown](PERSON) , check the status of claim [369858](claim_id).
+    - I'm [James Miller](PERSON). What is the status of claim [748896](claim_id).
+    - Name: [Jennifer Levine](PERSON). Check the status of claim [348795](claim_id).
 
-- intent: check_policies
-  examples: |
-    - Hey, I would like to know about the insurance policies you offer.
-    - What type of insurance policies do you offer?  
 
 - intent: check_claim_status
   examples: |
     - Hey I would like to check the claim status for a claim i filed.
     - Can you please tell me my claim status.
+    - check status of my claim.
+    - check on my claim status
+    - check the status of a claim
+    - I need to check my claim status
+    - check claim status
+    - view my claims
+    - show my claims.
+    - view my recent claims
+    - show me my claims.
+    - what is my claim history
+    - get claim status
+    - show some claims.
+    - check up on a claim.
+    - what is the status of my recent claim?
+    - has my claim been processed?
 
+- intent: file_a_claim
+  examples: |
+    - file a claim
+    - make a claim
+    - i need to file a claim
+    - submit a claim
+    - submit a new claim
+    - make a new claim
+    - file a new claim
+    - I would like to file a new claim
+    - I want to file a claim
 
+- intent: inquire
+  examples: |
+    - What kind of insurance policies do you offer?
+    - Tell me about your available policies.
+    - I would like to know about your offered policies.
+    - What type of policies do you offer?
+    - Offered insurance policies.
+    - Your insurance policies.
+    - What are your insurance policies?
+
+- intent: provide_uname
+  examples: |
+    - [John Miller](PERSON).
+    - Sure. I am registered as [Susan Brown](PERSON).
+    - My username is [Jacob Williams](PERSON).
+    - My name is [Barbara Miller](PERSON). 
+
+- intent: life
+  examples: |
+    - I would like to know about life insurance policies.
+    - Life insurance.
+    - Tell me about your life insurance policies.
+    - Insurance of my life.
+    - What kind of life insurance do you offer?
+    - Describe your life insurance policies.
+
+- intent: health
+  examples: |
+    - I would like to know about health insurance policies.
+    - Health insurance.
+    - Tell me about your health insurance policies.
+    - Insurance of my health.
+    - What kind of health insurance do you offer?
+    - Describe your health insurance policies.  
+
+- intent: auto
+  examples: |
+    - I would like to know about auto insurance policies.
+    - Auto insurance.
+    - Tell me about your auto insurance policies.
+    - Insurance of my vehicle.
+    - What kind of auto insurance do you offer?
+    - Describe your auto insurance policies.      
   
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
     - good by
     - cee you later
@@ -102,10 +172,14 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
+    
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- regex: claim_id
+  examples: |
+    - \d{6}
